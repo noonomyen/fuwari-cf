@@ -42,6 +42,10 @@ export function GithubCardComponent(properties, children) {
 	const sig = proc.stdout.trim();
 
 	if (proc.error || proc.status !== 0 || sig.length !== 64) {
+		console.error(`[STDOUT]: ${proc.stdout}`);
+		console.error(`[ERROR]: ${proc.error}`);
+		console.error(`[STATUS]: ${proc.status}`);
+
 		throw new Error("Failed to generate signature for GitHub API cache.");
 	}
 

@@ -9,5 +9,5 @@ const githubRepoRegex = /^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/;
  * @returns {boolean} True if the input matches the GitHub repository format, otherwise false.
  */
 export default function isGithubRepo(ownerRepo) {
-  return githubRepoRegex.test(ownerRepo);
+	return githubRepoRegex.test(ownerRepo);
 }

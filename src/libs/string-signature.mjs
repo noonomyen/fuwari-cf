@@ -12,18 +12,18 @@ const encoder = new TextEncoder();
  * @returns {Promise<string>} A promise that resolves to the hexadecimal string representation of the HMAC signature.
  */
 export default async function HMACStringSignature(text, key) {
-  const ckey = await subtle.importKey(
-    "raw",
-    encoder.encode(key),
-    { name: "HMAC", hash: "SHA-256" },
-    false,
-    ["sign"]
-  );
+	const ckey = await subtle.importKey(
+		"raw",
+		encoder.encode(key),
+		{ name: "HMAC", hash: "SHA-256" },
+		false,
+		["sign"],
+	);
 
-  const sigBuffer = await subtle.sign("HMAC", ckey, encoder.encode(text));
-  const signature = Array.from(new Uint8Array(sigBuffer))
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
+	const sigBuffer = await subtle.sign("HMAC", ckey, encoder.encode(text));
+	const signature = Array.from(new Uint8Array(sigBuffer))
+		.map((b) => b.toString(16).padStart(2, "0"))
+		.join("");
 
-  return signature;
+	return signature;
 }

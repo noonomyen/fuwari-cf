@@ -1,0 +1,24 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "fuwari",
+	"main": "./dist/_worker.js/index.js",
+	"compatibility_date": "2025-04-02",
+	"compatibility_flags": ["nodejs_compat"],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": "./dist"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"kv_namespaces": [
+		{
+			"binding": "KV_GITHUB_API_CACHE",
+			"id": "<id>"
+		}
+	],
+	"vars": {
+		"SECRET_GITHUB_API_CACHE_PAT": null,
+		"SECRET_GITHUB_API_CACHE_SIG_KEY": null
+	}
+}

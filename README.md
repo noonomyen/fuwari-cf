@@ -2,6 +2,8 @@
 
 A static blog template built with [Astro](https://astro.build).
 
+This is a fork modified to work with Cloudflare Pages.
+
 [**🖥️ Live Demo (Vercel)**](https://fuwari.vercel.app)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
 [**📦 Old Hexo Version**](https://github.com/saicaca/hexo-theme-vivia)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
 [**🌏 中文**](https://github.com/saicaca/fuwari/blob/main/README.zh-CN.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
@@ -25,6 +27,11 @@ A static blog template built with [Astro](https://astro.build).
 - [x] Search
 - [ ] TOC
 
+### Additional Features Added in This Repository
+
+- [X] Configuration for Cloudflare Pages
+- [X] Caching of GitHub API requests using Cloudflare Workers Cache and KV
+
 ## 🚀 How to Use
 
 1. [Generate a new repository](https://github.com/saicaca/fuwari/generate) from this template or fork this repository.
@@ -32,7 +39,17 @@ A static blog template built with [Astro](https://astro.build).
    - Install [pnpm](https://pnpm.io) `npm install -g pnpm` if you haven't.
 3. Edit the config file `src/config.ts` to customize your blog.
 4. Run `pnpm new-post <filename>` to create a new post and edit it in `src/content/posts/`.
-5. Deploy your blog to Vercel, Netlify, GitHub Pages, etc. following [the guides](https://docs.astro.build/en/guides/deploy/). You need to edit the site configuration in `astro.config.mjs` before deployment.
+5. Deploy your blog to Cloudflare Pages by following the steps in [this guide](https://docs.astro.build/en/guides/deploy/cloudflare/#cloudflare-pages).  
+Don't forget to update the site configuration in the `astro.config.mjs` file, and add the required secrets under `Variables and Secrets` in your Cloudflare Pages settings before deploying the site.
+
+### Required Environment Variables
+
+- `SECRET_GITHUB_API_CACHE_PAT` - A personal access token used by the Worker to send requests to api.github.com.
+- `SECRET_GITHUB_API_CACHE_SIG_KEY` - A SHA-256 hex-encoded key used to sign the repository, verifying that the repo actually belongs to your blog.
+
+### `astro.config.mjs`
+
+- Update `kv_namespaces[0].id` with the `ID` you get from creating a KV namespace in your Cloudflare account.
 
 ## ⚙️ Frontmatter of Posts
 

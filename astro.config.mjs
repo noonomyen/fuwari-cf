@@ -1,10 +1,11 @@
+import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import swup from "@swup/astro";
 import Compress from "astro-compress";
 import icon from "astro-icon";
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeComponents from "rehype-components"; /* Render the custom directive content */
 import rehypeKatex from "rehype-katex";
@@ -24,12 +25,12 @@ export default defineConfig({
   site: "https://fuwari.vercel.app/",
   base: "/",
   trailingSlash: "always",
+  output: "static",
+
   integrations: [
-    tailwind(
-        {
-          nesting: true,
-        }
-    ),
+    tailwind({
+      nesting: true,
+    }),
     swup({
       theme: false,
       animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
@@ -62,6 +63,7 @@ export default defineConfig({
       },
     }),
   ],
+
   markdown: {
     remarkPlugins: [
       remarkMath,
@@ -113,6 +115,7 @@ export default defineConfig({
       ],
     ],
   },
+
   vite: {
     build: {
       rollupOptions: {
@@ -129,4 +132,35 @@ export default defineConfig({
       },
     },
   },
+
+  env: {
+    schema: {
+      SECRET_GITHUB_API_CACHE_PAT: envField.string({
+        context: "server",
+        access: "secret",
+        optional: false,
+      }),
+      SECRET_GITHUB_API_CACHE_SIG_KEY: envField.string({
+        context: "server",
+        access: "secret",
+        optional: false,
+      }),
+    },
+  },
+
+  alias: {
+    "@libs": "./src/libs",
+  },
+
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+      configPath: "./wrangler.jsonc",
+    },
+    routes: {
+      extend: {
+        exclude: [{ pattern: "/pagefind/*" }],
+      },
+    },
+  }),
 });

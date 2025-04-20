@@ -25,7 +25,7 @@
 ### คุณสมบัติเสริมที่ repository นี้ได้เพิ่ม
 
 - [x] Config สำหรับ Cloudflare Pages
-- [x] Cache คำขอ GitHub api ด้วย Cloudlfare Workers Cache และ KV
+- [x] Cache คำขอ GitHub api ด้วย Cloudflare Workers Cache และ KV
 
 ## 🚀 วิธีใช้งาน
 

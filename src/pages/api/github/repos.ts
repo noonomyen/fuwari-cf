@@ -54,7 +54,10 @@ export const GET: APIRoute = async (context) => {
 
 	console.info("[/api/github/repos] Not in Cache, trying to fetch from KV");
 
-	const kvCacheResponse = await runtime.env.KV_GITHUB_API_CACHE.get(repository);
+	const kvCacheResponse = await runtime.env.KV_GITHUB_API_CACHE.get(
+		repository,
+		"text",
+	);
 
 	if (kvCacheResponse) {
 		console.info("[/api/github/repos] Found in KV");
@@ -97,17 +100,19 @@ export const GET: APIRoute = async (context) => {
 		return new Response(null, { status: 503 });
 	}
 
-	const date = new Date();
+	const timestamp = (new Date().getTime() / 1000) | 0;
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	const obj_data: { [key: string]: any } = await githubResponse.json();
 	const { permissions, ...filteredData } = obj_data;
 
-	filteredData._fetched_at = (date.getTime() / 1000) | 0;
+	filteredData._fetched_at = timestamp;
 	const str_data = JSON.stringify(filteredData);
 
 	console.info("[/api/github/repos] Storing response from origin into KV");
 
-	runtime.env.KV_GITHUB_API_CACHE.put(repository, str_data);
+	runtime.env.KV_GITHUB_API_CACHE.put(repository, str_data, {
+		expiration: timestamp + 3600,
+	});
 
 	console.info("[/api/github/repos] Caching response from origin");
 

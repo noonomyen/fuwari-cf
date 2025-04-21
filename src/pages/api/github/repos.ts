@@ -5,6 +5,8 @@ import type { APIRoute } from "astro";
 import isGithubRepo from "@/libs/is-github-repo";
 import HMACStringSignature from "@/libs/string-signature";
 
+const encoder = new TextEncoder();
+
 export const GET: APIRoute = async (context) => {
 	const runtime = context.locals.runtime;
 
@@ -33,6 +35,8 @@ export const GET: APIRoute = async (context) => {
 		(await HMACStringSignature(
 			repository,
 			runtime.env.SECRET_GITHUB_API_CACHE_SIG_KEY,
+			crypto.subtle,
+			encoder,
 		)) !== signature
 	) {
 		return new Response(null, { status: 403 });

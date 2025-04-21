@@ -3,25 +3,32 @@
   via `spawnSync` during the build process. The reason for this approach is explained in that file.
 */
 
+import { subtle } from "node:crypto";
 import { argv, exit, stdout } from "node:process";
+import { TextEncoder } from "node:util";
 import { config } from "dotenv";
 
 import HMACStringSignature from "../src/libs/string-signature.mjs";
 
 if (config().error) {
-  config({ path: ".dev.vars" });
+	config({ path: ".dev.vars" });
 }
 
 const text = argv[2];
 const key = process.env.SECRET_GITHUB_API_CACHE_SIG_KEY;
 
 if (!key || !text) {
-  console.error("Usage: node string-sign.js <text>");
-  console.error(
-    "Ensure SECRET_GITHUB_API_CACHE_SIG_KEY is set in your .env or .dev.vars file."
-  );
-  exit(1);
+	console.error("Usage: node string-sign.js <text>");
+	console.error(
+		"Ensure SECRET_GITHUB_API_CACHE_SIG_KEY is set in your .env or .dev.vars file.",
+	);
+	exit(1);
 }
 
-const signature = await HMACStringSignature(text, key);
+const signature = await HMACStringSignature(
+	text,
+	key,
+	subtle,
+	new TextEncoder(),
+);
 stdout.write(signature);

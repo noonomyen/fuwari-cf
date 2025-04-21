@@ -43,6 +43,7 @@ export function GithubCardComponent(properties, children) {
 
 	if (proc.error || proc.status !== 0 || sig.length !== 64) {
 		console.error(`[STDOUT]: ${proc.stdout}`);
+		console.error(`[STDERR]: ${proc.stderr}`);
 		console.error(`[ERROR]: ${proc.error}`);
 		console.error(`[STATUS]: ${proc.status}`);
 

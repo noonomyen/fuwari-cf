@@ -2,7 +2,7 @@
 
 Un tema estático para blogs construido con [Astro](https://astro.build).
 
-[**🖥️ Demostración en Vivo (Vercel)**](https://fuwari.vercel.app)
+[**🖥️ Demostración en Vivo (Cloudflare Pages)**](https://fuwari-deploy.noonomyen.com)
 
 ![Imagen de Vista Previa](https://raw.githubusercontent.com/saicaca/resource/main/fuwari/home.png)
 
@@ -45,7 +45,7 @@ deno run -A npm:create-fuwari@latest
 
 1. Edita el archivo de configuración `src/config.ts` para personalizar tu blog.
 2. Ejecuta `pnpm new-post <nombre-de-archivo>` para crear una nueva entrada y edítala en `src/content/posts/`.
-3. Despliega tu blog en Vercel, Netlify, GitHub Pages, etc., siguiendo [las guías](https://docs.astro.build/en/guides/deploy/). Necesitas editar la configuración del sitio en `astro.config.mjs` antes del despliegue.
+3. Despliega tu blog en Cloudflare Pages, Netlify, GitHub Pages, etc., siguiendo [las guías](https://docs.astro.build/en/guides/deploy/). Necesitas editar la configuración del sitio en `astro.config.mjs` antes del despliegue.
 
 ## 🚀 Cómo Usar 2
 
@@ -54,7 +54,7 @@ deno run -A npm:create-fuwari@latest
    - Instala [pnpm](https://pnpm.io) `npm install -g pnpm` si aún no lo tienes.
 3. Edita el archivo de configuración `src/config.ts` para personalizar tu blog.
 4. Ejecuta `pnpm new-post <nombre-de-archivo>` para crear una nueva entrada y edítala en `src/content/posts/`.
-5. Despliega tu blog en Vercel, Netlify, GitHub Pages, etc., siguiendo [las guías](https://docs.astro.build/en/guides/deploy/). Necesitas editar la configuración del sitio en `astro.config.mjs` antes del despliegue.
+5. Despliega tu blog en Cloudflare Pages, Netlify, GitHub Pages, etc., siguiendo [las guías](https://docs.astro.build/en/guides/deploy/). Necesitas editar la configuración del sitio en `astro.config.mjs` antes del despliegue.
 
 ## ⚙️ Cabecera de las Entradas
 

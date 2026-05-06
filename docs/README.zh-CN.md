@@ -2,7 +2,7 @@
 
 基于 [Astro](https://astro.build) 开发的静态博客模板。
 
-[**🖥️在线预览（Vercel）**](https://fuwari.vercel.app)
+[**🖥️在线预览（Cloudflare Pages）**](https://fuwari-deploy.noonomyen.com)
 
 ![Preview Image](https://raw.githubusercontent.com/saicaca/resource/main/fuwari/home.png)
 
@@ -45,7 +45,7 @@ deno run -A npm:create-fuwari@latest
 
 1. 通过配置文件 `src/config.ts` 自定义博客
 2. 执行 `pnpm new-post <filename>` 创建新文章，并在 `src/content/posts/` 目录中编辑
-3. 参考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)将博客部署至 Vercel, Netlify, GitHub Pages 等；部署前需编辑 `astro.config.mjs` 中的站点设置。
+3. 参考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)将博客部署至 Cloudflare Pages, Netlify, GitHub Pages 等；部署前需编辑 `astro.config.mjs` 中的站点设置。
 
 ## 🚀 使用方法 2
 
@@ -54,7 +54,7 @@ deno run -A npm:create-fuwari@latest
    - 若未安装 [pnpm](https://pnpm.io)，执行 `npm install -g pnpm`
 3. 通过配置文件 `src/config.ts` 自定义博客
 4. 执行 `pnpm new-post <filename>` 创建新文章，并在 `src/content/posts/` 目录中编辑
-5. 参考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)将博客部署至 Vercel, Netlify, GitHub Pages 等；部署前需编辑 `astro.config.mjs` 中的站点设置。
+5. 参考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)将博客部署至 Cloudflare Pages, Netlify, GitHub Pages 等；部署前需编辑 `astro.config.mjs` 中的站点设置。
 
 ## ⚙️ 文章 Frontmatter
 

@@ -2,7 +2,7 @@
 
 Một mẫu blog tĩnh được xây bằng [Astro](https://astro.build).
 
-[**🖥️ Xem bản dùng thử (Vercel)**](https://fuwari.vercel.app)
+[**🖥️ Xem bản dùng thử (Cloudflare Pages)**](https://fuwari-deploy.noonomyen.com)
 
 ![Hình ảnh xem trước](https://raw.githubusercontent.com/saicaca/resource/main/fuwari/home.png)
 
@@ -34,7 +34,7 @@ Một mẫu blog tĩnh được xây bằng [Astro](https://astro.build).
     - Cài đặt [pnpm](https://pnpm.io) `npm install -g pnpm` nếu chưa có.
 3. Chỉnh sửa tệp cấu hình `src/config.ts` để tùy chỉnh blog của bạn.
 4. Chạy `pnpm new-post <filename>` để tạo một bài viết mới và chỉnh sửa nó trong `src/content/posts/`.
-5. Triển khai blog của bạn lên Vercel, Netlify, GitHub Pages, etc. theo [chỉ dẫn](https://docs.astro.build/en/guides/deploy/). Bạn cần chỉnh sửa cấu hình trang web trong `astro.config.mjs` trước khi triển khai.
+5. Triển khai blog của bạn lên Cloudflare Pages, Netlify, GitHub Pages, etc. theo [chỉ dẫn](https://docs.astro.build/en/guides/deploy/). Bạn cần chỉnh sửa cấu hình trang web trong `astro.config.mjs` trước khi triển khai.
 
 ## 📝 Tiêu đề đầy đủ của bài viết
 
@@ -55,9 +55,9 @@ lang: jp      # Chỉ đặt nếu ngôn ngữ của bài viết khác với ng�
 
 Ngoài việc Astro đã có hỗ trợ mặc định cho [Markdown vị Github](https://github.github.com/gfm/), một số tính năng Markdown khác cũng đã được bổ sung:
 
-- Chêm xen ([Xem trước và Cách sử dụng](https://fuwari.vercel.app/posts/markdown-extended/#admonitions))
-- Thẻ hiển thị kho lưu trữ GitHub ([Xem trước và Cách sử dụng](https://fuwari.vercel.app/posts/markdown-extended/#github-repository-cards))
-- Các khối mã nâng cao với Expressive Code ([Xem trước](https://fuwari.vercel.app/posts/expressive-code/) / [Tài liệu](https://expressive-code.com/))
+- Chêm xen ([Xem trước và Cách sử dụng](https://fuwari-deploy.noonomyen.com/posts/markdown-extended/#admonitions))
+- Thẻ hiển thị kho lưu trữ GitHub ([Xem trước và Cách sử dụng](https://fuwari-deploy.noonomyen.com/posts/markdown-extended/#github-repository-cards))
+- Các khối mã nâng cao với Expressive Code ([Xem trước](https://fuwari-deploy.noonomyen.com/posts/expressive-code/) / [Tài liệu](https://expressive-code.com/))
 
 ## ⚡ Lệnh
 

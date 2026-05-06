@@ -1,0 +1,17 @@
+---
+import { Icon } from "astro-icon/components";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+---
+
+<MainGridLayout title="404 - Page not found" description="The page you requested could not be found.">
+	<div class="card-base px-8 py-12 text-center">
+		<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--primary)]/15 text-[var(--primary)]">
+			<Icon name="material-symbols:error-outline-rounded" class="text-[2rem]" />
+		</div>
+		<h1 class="mb-3 text-3xl font-bold text-black/90 dark:text-white/90">404</h1>
+		<p class="mb-2 text-lg font-medium text-black/75 dark:text-white/75">Page not found</p>
+		<p class="mx-auto mb-8 max-w-[32rem] text-sm text-black/50 dark:text-white/50">
+			The link may be broken, or the page may have been moved.
+		</p>
+	</div>
+</MainGridLayout>

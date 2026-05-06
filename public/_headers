@@ -1,0 +1,25 @@
+# Default HTML and route responses
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), geolocation=(), microphone=()
+
+# Fingerprinted Astro assets
+/_astro/*
+  Cache-Control: public, max-age=604800, immutable
+
+# Search index assets
+/pagefind/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Favicon assets
+/favicon/*
+  Cache-Control: public, max-age=604800
+
+# Optional: prevent preview domains from being indexed
+# https://your-project.pages.dev/*
+#   X-Robots-Tag: noindex
+# https://*.your-project.pages.dev/*
+#   X-Robots-Tag: noindex

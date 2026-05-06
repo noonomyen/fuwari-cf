@@ -1,0 +1,11 @@
+# Cloudflare Pages redirect template
+# One rule per line: [source] [destination] [code]
+
+# Permanent redirect example
+# /old-path /new-path 301
+
+# Redirect a whole section and keep the trailing path
+# /legacy/* /posts/:splat 301
+
+# External redirect example
+# /github https://github.com/noonomyen/fuwari-cf 302

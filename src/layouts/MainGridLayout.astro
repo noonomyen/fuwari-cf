@@ -18,6 +18,8 @@ import Layout from "./Layout.astro";
 interface Props {
 	title?: string;
 	banner?: string;
+	ogImage?: string;
+	ogImageBasePath?: string;
 	description?: string;
 	lang?: string;
 	setOGTypeArticle?: boolean;
@@ -27,6 +29,8 @@ interface Props {
 const {
 	title,
 	banner,
+	ogImage,
+	ogImageBasePath,
 	description,
 	lang,
 	setOGTypeArticle,
@@ -41,7 +45,7 @@ const mainPanelTop = siteConfig.banner.enable
 	: "5.5rem";
 ---
 
-<Layout title={title} banner={banner} description={description} lang={lang} setOGTypeArticle={setOGTypeArticle}>
+<Layout title={title} banner={banner} ogImage={ogImage} ogImageBasePath={ogImageBasePath} description={description} lang={lang} setOGTypeArticle={setOGTypeArticle}>
 
 <!-- Navbar -->
 <slot slot="head" name="head"></slot>

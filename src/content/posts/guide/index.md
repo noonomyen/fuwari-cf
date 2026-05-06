@@ -21,6 +21,7 @@ title: My First Blog Post
 published: 2023-09-09
 description: This is the first post of my new Astro blog.
 image: ./cover.jpg
+og-image: ./og-cover.png
 tags: [Foo, Bar]
 category: Front-end
 draft: false
@@ -33,6 +34,7 @@ draft: false
 | `published`   | The date the post was published.                                                                                                                                                                            |
 | `description` | A short description of the post. Displayed on index page.                                                                                                                                                   |
 | `image`       | The cover image path of the post.<br/>1. Start with `http://` or `https://`: Use web image<br/>2. Start with `/`: For image in `public` dir<br/>3. With none of the prefixes: Relative to the markdown file |
+| `og-image`    | Optional social preview image path.<br/>Uses the same path rules as `image` and is optimized to WebP for metadata output.<br/>If omitted, the site banner is used when enabled. |
 | `tags`        | The tags of the post.                                                                                                                                                                                       |
 | `category`    | The category of the post.                                                                                                                                                                                   |
 | `draft`        | If this post is still a draft, which won't be displayed.                                                                                                                                                    |

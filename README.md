@@ -57,12 +57,16 @@ title: My First Blog Post
 published: 2023-09-09
 description: This is the first post of my new Astro blog.
 image: ./cover.jpg
+og-image: ./og-cover.png # Optional. Uses this image for link previews.
 tags: [Foo, Bar]
 category: Front-end
 draft: false
 lang: jp      # Set only if the post's language differs from the site's language in `config.ts`
 ---
 ```
+
+- `image` controls the visible cover image inside the post.
+- `og-image` is optional and controls the Open Graph / Twitter preview image. If omitted, the site banner is used when enabled.
 
 ## 🧩 Markdown Extended Syntax
 

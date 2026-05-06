@@ -1,6 +1,7 @@
 # Default HTML and route responses
 /*
   Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
@@ -18,8 +19,4 @@
 /favicon/*
   Cache-Control: public, max-age=604800
 
-# Optional: prevent preview domains from being indexed
-# https://your-project.pages.dev/*
-#   X-Robots-Tag: noindex
-# https://*.your-project.pages.dev/*
-#   X-Robots-Tag: noindex
+# Deploy branch default: block indexing for all pages
